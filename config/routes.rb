@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   patch 'bridesmaid_update', to: 'bridesmaid#update'
   put 'bridesmaid_update', to: 'bridesmaid#update'
 
-  resources :guests, except: [:destroy]
+  resources :guests, except: [:destroy, :new, :create]
 end

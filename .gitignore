@@ -13,3 +13,4 @@ secrets.yml
 /tmp
 config.ru
 database.yml
+app/assets/images/*
