@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @guest
       session[:guest_id] = @guest.id
       flash[:message] = "Welcome #{@guest.first_name1}!"
-      @guest.roles << Role.create(name: 'registered_guest')
+      @guest.role << "guest"
       if current_permission
         redirect_to welcome_path
       end

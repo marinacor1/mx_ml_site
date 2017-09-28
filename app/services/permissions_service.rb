@@ -19,7 +19,7 @@ class PermissionsService
     when @a_guest.role == 'baf' then bridesmaid_and_family_permissions
     when @a_guest.role == 'baf' then family_permissions
     when @a_guest.role == 'bridesmaid' then bridesmaid_permissions
-    when @a_guest.role == 'guest' then guest_permissions
+    when @a_guest.role == 'guest' then registered_guest_permissions
     else
       unregistered_guest_permissions
     end
@@ -52,7 +52,6 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'schedule'
     return true if controller = 'connected'
-
   end
 
   def bridesmaid_permissions
@@ -95,11 +94,9 @@ class PermissionsService
   end
 
   def unregistered_guest_permissions
-    return true if controller = 'welcome'
     return true if controller == "sessions" && action == "new"
     return true if controller == "sessions" && action == "create"
     return true if controller == "sessions" && action == "destroy"
-    return true if controller = 'connected'
   end
 
   def controller

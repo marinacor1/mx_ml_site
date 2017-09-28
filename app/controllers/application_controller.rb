@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_guest
 
   def current_guest
-    #TODO session not yet loaded
     @current_guest ||= Guest.find(session[:guest_id]) if session['guest_id']
   end
 
