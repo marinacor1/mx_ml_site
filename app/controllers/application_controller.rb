@@ -1,21 +1,25 @@
+require 'application_responder'
+
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  self.responder = ApplicationResponder
+  respond_to :html
+
   protect_from_forgery with: :null_session
   before_action :authorize!
-  helper_method :current_user
+  helper_method :current_guest
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session['user_id']
+  def current_guest
+    #TODO session not yet loaded
+    @current_guest ||= Guest.find(session[:guest_id]) if session['guest_id']
   end
 
   def current_permission
-    @current_permission ||= PermssionService.new(current_user, params[:controller], params[:action])
+    @current_permission ||= PermissionsService.new(current_guest, params[:controller], params[:action])
   end
 
   def authorize!
     unless current_permission.allow?
-      redirect_to root_url
+      redirect_to login_path
     end
   end
 end

@@ -7,19 +7,19 @@ class PermissionsService
                  :bridesmaid_and_family?,
                  :admin?
 
-  def initialize(user, controller, action)
-    @a_user = user || User.new
+  def initialize(guest, controller, action)
+    @a_guest = guest || Guest.new
     @_controller = controller
     @_action = action
   end
 
   def allow?
     case
-    when admin? then admin_permissions
-    when bridesmaid_and_family? then bridesmaid_and_family_permissions
-    when family? then family_permissions
-    when bridesmaid? then bridesmaid_permissions
-    when registered_guest? then guest_permissions
+    when @a_guest.role == 'Admin' then admin_permissions
+    when @a_guest.role == 'baf' then bridesmaid_and_family_permissions
+    when @a_guest.role == 'baf' then family_permissions
+    when @a_guest.role == 'bridesmaid' then bridesmaid_permissions
+    when @a_guest.role == 'guest' then guest_permissions
     else
       unregistered_guest_permissions
     end
@@ -110,7 +110,7 @@ class PermissionsService
     @_action
   end
 
-  def user
-    @_user
+  def guest
+    @_guest
   end
 end
