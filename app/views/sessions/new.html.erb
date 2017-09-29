@@ -4,7 +4,7 @@
     <h2>June 2, 2018</h2>
     <%= form_for(:session, url: login_path) do |f| %>
       <div class="code-label">
-        <%= f.label :password %>
+        <%= f.label :code, 'Password:' %>
         <%= f.password_field :code %>
         <%= f.submit "Submit", :class => 'submit-button'%>
         </div>
