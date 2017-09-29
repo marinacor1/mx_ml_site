@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: green;
+  background: url('empty_wreath.jpg') no-repeat ;
+  position: relative;
+  text-align: center;
+}
+
+.login-user-form {
+
+}
+
+.login-title {
+  background-color: yellow;
+}
+
+.login-button {
+  position: absolute;
+  top: 400px;
+  padding-left: 400px;
+  margin: auto 0;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.code-label{
+  font-family: 'Homemade Apple', cursive;
+  font: bold;
+
+}
+
+#session_code {
+  border: solid black 1px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.submit-button {
+  border: solid black 1px;
+  border-radius: 2px;
+}

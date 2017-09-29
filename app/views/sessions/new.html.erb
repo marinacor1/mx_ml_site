@@ -1,9 +1,14 @@
 <div class="login-user-form">
-  <h1>Login</h1>
   <div class ="login-button">
+    <h1>Marina & Lawrence</h1>
+    <h2>June 2, 2018</h2>
     <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.text_field :code, placeholder: "code" %>
-      <%= f.submit "Submit"%>
+      <div class="code-label">
+        <%= f.label :password %>
+        <%= f.password_field :code %>
+        <%= f.submit "Submit", :class => 'submit-button'%>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
