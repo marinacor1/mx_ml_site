@@ -28,8 +28,8 @@ class PermissionsService
   private
 
   def admin_permissions
-    return true if controller = 'welcome'
-    return true if controller = 'sessions'
+    return true if controller == 'welcome'
+    return true if controller == 'sessions'
     return true if controller == 'bridesmaids' && action.in?(%w( index show edit update))
     return true if controller == 'family'
     return true if controller == 'guest' && action.in?(%w( index show edit update))
@@ -38,12 +38,12 @@ class PermissionsService
     return true if controller == 'mexico'
     return true if controller == 'our_story'
     return true if controller == 'schedule'
-    return true if controller = 'connected'
+    return true if controller == 'connected'
   end
 
   def family_permissions
-    return true if controller = 'welcome'
-    return true if controller = 'sessions'
+    return true if controller == 'welcome'
+    return true if controller == 'sessions'
     return true if controller == 'family'
     return true if controller == 'guest' && action.in?(%w(show edit update))
     return true if controller == 'itinerary'
@@ -51,12 +51,12 @@ class PermissionsService
     return true if controller == 'mexico'
     return true if controller == 'our_story'
     return true if controller == 'schedule'
-    return true if controller = 'connected'
+    return true if controller == 'connected'
   end
 
   def bridesmaid_permissions
-    return true if controller = 'welcome'
-    return true if controller = 'sessions'
+    return true if controller == 'welcome'
+    return true if controller == 'sessions'
     return true if controller == 'bridesmaids' && action.in?(%w(show edit update))
     return true if controller == 'guest' && action.in?(%w(show edit update))
     return true if controller == 'itinerary'
@@ -64,12 +64,12 @@ class PermissionsService
     return true if controller == 'mexico'
     return true if controller == 'our_story'
     return true if controller == 'schedule'
-    return true if controller = 'connected'
+    return true if controller == 'connected'
   end
 
   def bridesmaid_and_family_permissions
-    return true if controller = 'welcome'
-    return true if controller = 'sessions'
+    return true if controller == 'welcome'
+    return true if controller == 'sessions'
     return true if controller == 'bridesmaids' && action.in?(%w(show edit update))
     return true if controller == 'family'
     return true if controller == 'guest' && action.in?(%w(show edit update))
@@ -78,19 +78,19 @@ class PermissionsService
     return true if controller == 'mexico'
     return true if controller == 'our_story'
     return true if controller == 'family_schedule'
-    return true if controller = 'connected'
+    return true if controller == 'connected'
   end
 
   def registered_guest_permissions
-    return true if controller = 'welcome'
-    return true if controller = 'sessions'
+    return true if controller == 'welcome'
+    return true if controller == 'sessions'
     return true if controller == 'guest' && action.in?(%w(show edit update))
     return true if controller == 'itinerary'
     return true if controller == 'lodging'
     return true if controller == 'mexico'
     return true if controller == 'our_story'
     return true if controller == 'schedule'
-    return true if controller = 'connected'
+    return true if controller == 'connected'
   end
 
   def unregistered_guest_permissions
