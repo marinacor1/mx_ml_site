@@ -25,8 +25,17 @@
 
 .welcome-title {
  font-family: 'Homemade Apple', cursive;
+ text-align: center;
+margin: 20px;
 }
 
+.hamptons {
+
+	width: 100px;
+	height: 100px;
+	background: url('pic01.jpg') no-repeat ;
+
+}
 #session_code {
  border: solid black 1px;
  border-radius: 2px;
