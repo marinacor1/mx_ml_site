@@ -12,17 +12,18 @@
  *
  *= require_tree .
  *= require_self
+ *= require main
  */
 
 body {
-  background-color: green;
-  background: url('empty_wreath.jpg') no-repeat ;
-  position: relative;
-  text-align: center;
+
 }
 
 .login-user-form {
-
+  background-color: yellow;
+  background: url('empty_wreath.jpg') no-repeat ;
+  position: relative;
+  text-align: center;
 }
 
 .login-title {
@@ -30,23 +31,27 @@ body {
 }
 
 .login-button {
+  border: 2px dotted #000;
+  border-radius: 50%;
   position: absolute;
-  top: 400px;
-  padding-left: 400px;
-  margin: auto 0;
+  padding: 200px;
+  margin: 200px;
   font-family: 'Homemade Apple', cursive;
 }
 
 .code-label{
   font-family: 'Homemade Apple', cursive;
   font: bold;
+}
 
+.welcome-title {
+  font-family: 'Homemade Apple', cursive;
 }
 
 #session_code {
   border: solid black 1px;
   border-radius: 2px;
-  margin-left: 5px;
+  margin: 10px;
 }
 
 .submit-button {

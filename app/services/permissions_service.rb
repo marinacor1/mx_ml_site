@@ -14,7 +14,6 @@ class PermissionsService
   end
 
   def allow?
-    binding.pry
     case
     when @a_guest.role == 'Admin' then admin_permissions
     when @a_guest.role == 'baf' then bridesmaid_and_family_permissions

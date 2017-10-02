@@ -6,7 +6,6 @@ RSpec.feature 'unregistered guest can login' do
 
     visit root_path
 
-
     expect(current_path).to eq login_path
 
     fill_in 'Password:', with: "abc123"
