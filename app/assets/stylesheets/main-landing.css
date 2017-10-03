@@ -1,0 +1,43 @@
+.login-button {
+	background: url('empty_wreath.jpg') no-repeat ;
+  padding: 500px;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.login-title {
+ background-color: yellow;
+}
+
+.login-button {
+ position: absolute;
+ font-family: 'Homemade Apple', cursive;
+}
+
+.code-label{
+ font-family: 'Homemade Apple', cursive;
+ font: bold;
+}
+
+.user-form {
+ position: relative;
+ text-align: center;
+}
+
+.welcome-title {
+ font-family: 'Homemade Apple', cursive;
+ text-align: center;
+ margin: 20px;
+ color: #FFF !important;
+}
+
+
+#session_code {
+ border: solid black 1px;
+ border-radius: 2px;
+ margin: 10px;
+}
+
+.submit-button {
+ border: solid black 1px;
+ border-radius: 2px;
+}
