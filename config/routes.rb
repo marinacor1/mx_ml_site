@@ -18,4 +18,9 @@ Rails.application.routes.draw do
   put 'bridesmaid_update', to: 'bridesmaid#update'
 
   resources :guests, except: [:destroy, :new, :create]
+
+  namespace :admin do
+    get '/dashboard', to: 'users#show'
+    resources :users, only: [:update, :delete, :index]
+  end
 end
