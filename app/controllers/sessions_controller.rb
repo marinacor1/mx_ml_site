@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @guest = Guest.find_by(code: params[:session][:code])
+    @guest = Guest.find_by(code: params[:session][:password])
     if @guest
       session[:guest_id] = @guest.id
       flash[:message] = "Welcome #{@guest.first_name1}!"

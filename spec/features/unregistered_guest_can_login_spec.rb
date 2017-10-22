@@ -7,9 +7,8 @@ RSpec.feature 'unregistered guest can login' do
     visit root_path
 
     expect(current_path).to eq login_path
-within "code-label" do
-    fill_in 'Password:', with: "abc123"
-end
+
+    fill_in 'Password :', with: "abc123"
     click_on 'Submit'
 
     expect(current_path).to eq welcome_path
@@ -24,8 +23,7 @@ end
 
     expect(current_path).to eq login_path
 
-    fill_in 'Password:', with: "232"
-
+    fill_in 'Password :', with: "232"
 
     click_on 'Submit'
 
