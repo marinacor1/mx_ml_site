@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022185207) do
+ActiveRecord::Schema.define(version: 20171022214345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,13 @@ ActiveRecord::Schema.define(version: 20171022185207) do
     t.string   "food_option1"
     t.string   "food_option2"
     t.string   "housing"
-    t.string   "food_restrictions"
-    t.boolean  "logged_in",         default: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "role"
-    t.boolean  "rsvped",            default: false
+    t.boolean  "rsvped",       default: false
+    t.string   "email"
+    t.boolean  "attending"
+    t.string   "fact"
   end
 
 end

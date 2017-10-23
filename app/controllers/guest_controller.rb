@@ -1,13 +1,13 @@
 class GuestController < ApplicationController
 
   def edit
-    @guest = current_user
-    @query_guest = Guest.find(params[:id])
+    @guest = current_guest
   end
 
   def update
     @guest = Guest.find(params[:id])
     if @guest.update_attributes(guest_params)
+      attending_check(params['guest']['attending'])
       flash[:error] = 'Success! Your RSVP has updated.'
     else
       flash[:error] = 'Your RSVP could not be updated. Please check your input and try again.'
@@ -26,6 +26,16 @@ class GuestController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:first_name1, :first_name2, :last_name1, :last_name2, :code, :food_option1, :food_option2, :housing, :food_restrictions)
+    params.require(:guest).permit(:code, :housing, :attending, :rsvped, :fact)
+  end
+
+  def attending_check(status)
+    if status == 'Yes'
+      @guest.attending = true
+    elsif status == 'No'
+      @guest.attending = false
+    end
+    @guest.rsvped = true
+    @guest.save
   end
 end

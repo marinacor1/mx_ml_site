@@ -1,0 +1,44 @@
+RSVP to our event!
+
+<%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group">
+      RSVP for <%= @guest.first_name1 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Email:", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :fact, "Interesting Fact About You:", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <%= f.text_field :fact, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :attending, "Will you be attending the wedding?", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <div class = "state-dropdown">
+        <%= f.collection_select :attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
+      </div>ou
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :housing, "Where will you be staying?", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <div class = "state-dropdown">
+        <%= f.collection_select :housing, Guest.housing_options, :dup, :dup, {:prompt => true}%>
+      </div>ou
+      </div>
+    </div>
+
+    <div class="edit-user-submission">
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+<% end %>
+</div>
