@@ -21,6 +21,8 @@ class GuestController < ApplicationController
 
   def index
     @guests = Guest.all
+    @yes_guests = Guest.all.where(rsvped: true)
+    @no_guests = Guest.all.where(rsvped: false)
   end
 
   private

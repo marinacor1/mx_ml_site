@@ -7,9 +7,7 @@
           </li>
         <li>
           <% if current_guest.admin? %>
-            <%= link_to "Dashboard", admin_dashboard_path %>
-          <% else %>
-            <%= link_to "Dashboard", user_path(current_guest) %>
+            <%= link_to "Guest Information", guest_index_path %>
           <% end %>
         </li>
         <li class="map-marker">

@@ -31,6 +31,8 @@ RSpec.feature 'registered guest can rsvp' do
     expect(guest.housing).to eq 'Hotel'
     expect(guest.attending).to eq true
     expect(guest.fact).to eq 'Olympic skier'
+
+    expect(page).to have_content 'Success'
   end
 
 end

@@ -1,0 +1,31 @@
+<div= "containter">
+<div class="col md- 4 card">
+  <div class="users-index-page">
+    <h1>RSVP information:</h1>
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>#</th>
+          <th>Guest 1</th>
+          <th>Guest 2</th>
+          <th>Email</th>
+          <th>Housing</th>
+          <th>Interesting Fact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @guests.each_with_index do |user, index| %>
+            <td><%= index + 1 %></td>
+            <td><%= user.first_name1 %><%= user.last_name1 %></td>
+            <td><%= user.first_name2 %><%= user.last_name2 %></td>
+            <td><%= user.email %></td>
+            <td><%= user.housing %></td>
+            <td><%= user.rsvped %></td>
+        </tr>
+        <% end %>
+    </tbody>
+    </table>
+  </div>
+</div>
+</div>
