@@ -1,30 +1,30 @@
-<nav class="navbar" role="navigation">
-  <ul class="navbar-nav">
-      <% if current_guest %>
-        <li class="nav-item active">
-          <% if current_guest.admin? %>
-            <%= link_to "Guest Information", guest_index_path %>
-          <% end %>
+<div class = 'top-border'>
+  <nav class="attempt-at-nav">
+    <ul class="list-of-links">
+        <% if current_guest %>
+        <li class= "link">
+          <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
         </li>
-        <li class = "nav-item active newsfeed-link">
-          <%= link_to "All About Mexico", viva_mexico_path %>
-        </li>
-        <% if current_guest.admin? %>
-          <li class= "nav-item active edit-link">
-            <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
+          <li class="link">
+            <% if current_guest.admin? %>
+              <%= link_to "Guest Information", guest_index_path %>
+            <% end %>
           </li>
-        <% end %>
-        <li class="nav-item active logout-link">
-          <%= link_to "Logout", logout_path, method: :delete %>
-        </li>
-      </ul>
+          <li class = "link">
+            <%= link_to "All About Mexico", viva_mexico_path %>
+          </li>
 
-      <span class="navbar-text">
-        <% if current_guest.admin?  && current_guest.first_name1.nil? %>
-          Hello, Admin
-        <% else %>
-          Hello, <%=current_guest.first_name1  %>
-        <% end %>
-      </span>
-    <% end %>
-</nav>
+          <li class="link">
+            <%= link_to "Logout", logout_path, method: :delete %>
+          </li>
+        </ul>
+        <span class="message">
+          <% if current_guest.admin? %>
+            Hello, Admin
+          <% else %>
+            Hello, <%=current_guest.first_name1  %>
+          <% end %>
+        </span>
+      <% end %>
+  </nav>
+</div>
