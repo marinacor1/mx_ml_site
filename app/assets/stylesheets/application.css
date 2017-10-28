@@ -57,3 +57,24 @@
  	border-collapse: collapse;
  	border-spacing: 0;
  }
+
+.navbar-nav (
+  display: flex !important;
+  )
+.navbar-text {
+  justify-content: flex-end !important;
+  float: right !important;
+}
+
+.reservation-box{
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+
+.full-page {
+  width: 100%;
+  height: 100%;
+  background: url('empty_wreath.jpg') no-repeat ;
+}

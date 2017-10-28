@@ -1,8 +1,26 @@
-RSVP to our event!
-
-<%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
-    <div class="form-group">
+<div class="full-page">
+<div class="reservation-box">
+  <%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group" style="text-align:center;">
       RSVP for <%= @guest.first_name1 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :attending, "Will you be attending the wedding on Saturday, April 28, 2018 in Mexico City?", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <div class = "state-dropdown">
+        <%= f.collection_select :attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :friday_attending, "Will you be attending the Friday night dinner in Mexico City?", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <div class = "state-dropdown">
+        <%= f.collection_select :friday_attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
     </div>
 
     <div class="form-group">
@@ -13,32 +31,24 @@ RSVP to our event!
     </div>
 
     <div class="form-group">
+      <%= f.label :housing, "Where will you be staying?", class: "col-md-4 control-label" %>
+      <div class="col-md-8">
+        <div class = "state-dropdown">
+        <%= f.collection_select :housing, Guest.housing_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
       <%= f.label :fact, "Interesting Fact About You:", class: "col-md-4 control-label" %>
       <div class="col-md-8">
         <%= f.text_field :fact, class: "form-control" %>
       </div>
     </div>
-
-    <div class="form-group">
-      <%= f.label :attending, "Will you be attending the wedding?", class: "col-md-4 control-label" %>
-      <div class="col-md-8">
-        <div class = "state-dropdown">
-        <%= f.collection_select :attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
-      </div>ou
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :housing, "Where will you be staying?", class: "col-md-4 control-label" %>
-      <div class="col-md-8">
-        <div class = "state-dropdown">
-        <%= f.collection_select :housing, Guest.housing_options, :dup, :dup, {:prompt => true}%>
-      </div>ou
-      </div>
-    </div>
-
+<br>
     <div class="edit-user-submission">
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-info" %>
     </div>
-<% end %>
+  <% end %>
+</div>
 </div>

@@ -1,49 +1,30 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-        <% if current_guest %>
-          <li class="user-shadow">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-          </li>
-        <li>
+<nav class="navbar" role="navigation" style="background-color: #696969">
+  <ul class="navbar-nav">
+      <% if current_guest %>
+        <li class="nav-item active">
           <% if current_guest.admin? %>
             <%= link_to "Guest Information", guest_index_path %>
           <% end %>
         </li>
-        <li class="map-marker">
-          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-        </li>
-        <li class = "map-link">
-          <%= link_to "Our Story", our_story_path %>
-        </li>
-        <li class="newsfeed-list">
-          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-        </li>
-        <li class = "newsfeed-link">
+        <li class = "nav-item active newsfeed-link">
           <%= link_to "All About Mexico", viva_mexico_path %>
         </li>
         <% if current_guest.admin? %>
-          <li class="cog">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-          </li>
-          <li class= "edit-link">
-            <a href=<%= edit_guest_path(current_guest) %>>Guest RSVPs</a>
+          <li class= "nav-item active edit-link">
+            <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
           </li>
         <% end %>
-        <li class="remove">
-          <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-        </li>
-        <li class="logout-link">
+        <li class="nav-item active logout-link">
           <%= link_to "Logout", logout_path, method: :delete %>
         </li>
-        <li class="greeting">
-          <% if current_guest.admin?  && current_guest.first_name1.nil? %>
-            Hello, Admin
-          <% else %>
-            Hello, <%=current_guest.first_name1  %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+      </ul>
+
+      <span class="navbar-text">
+        <% if current_guest.admin?  && current_guest.first_name1.nil? %>
+          Hello, Admin
+        <% else %>
+          Hello, <%=current_guest.first_name1  %>
+        <% end %>
+      </span>
+    <% end %>
 </nav>
