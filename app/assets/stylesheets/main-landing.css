@@ -27,7 +27,8 @@
  font-family: 'Homemade Apple', cursive;
  text-align: center;
  margin: 20px;
- color: #FFF !important;
+ color: #000 !important;
+ padding: 10px;
 }
 
 
