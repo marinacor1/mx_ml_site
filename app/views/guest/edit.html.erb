@@ -1,8 +1,14 @@
 <div class="full-page">
 <div class="reservation-box">
+  <div class="dropdown">
   <%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
     <div class="form-group" style="text-align:center;">
-      RSVP for <%= @guest.first_name1 %>
+      <% if @guest.first_name1 && @guest.first_name2 %>
+        RSVP for <%= @guest.first_name1 %> and <%= @guest.first_name2 %>
+      <% else %>
+        RSVP for <%= @guest.first_name1 %>
+      <% end %>
+    </div>
     </div>
 
     <div class="form-group">
@@ -50,5 +56,6 @@
       <%= f.submit "Submit", class: "btn btn-secondary" %>
     </div></center>
   <% end %>
+</div>
 </div>
 </div>
