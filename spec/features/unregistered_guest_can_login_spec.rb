@@ -8,8 +8,7 @@ RSpec.feature 'unregistered guest can login' do
 
     expect(current_path).to eq login_path
 
-    fill_in 'Password:', with: "abc123"
-
+    fill_in 'Password :', with: "abc123"
     click_on 'Submit'
 
     expect(current_path).to eq welcome_path
@@ -24,8 +23,7 @@ RSpec.feature 'unregistered guest can login' do
 
     expect(current_path).to eq login_path
 
-    fill_in 'Password:', with: "232"
-
+    fill_in 'Password :', with: "232"
 
     click_on 'Submit'
 

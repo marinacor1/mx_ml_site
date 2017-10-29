@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     @guest = Guest.find_by(code: params[:session][:code])
     if @guest
       session[:guest_id] = @guest.id
-      flash[:message] = "Welcome #{@guest.first_name1}!"
       @guest.role = "guest"
       if current_permission
         redirect_to welcome_path

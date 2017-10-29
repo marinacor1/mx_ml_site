@@ -1,0 +1,64 @@
+
+.attempt-at-nav{
+  display: flex;
+  height: 40px;
+}
+
+.admin-greeting {
+  float: right;
+}
+ul {
+  list-style-type: circle;
+}
+
+li {
+  display: inline !important;
+  float: left;
+  text-decoration: none !important;
+
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+a:visited {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+a:active {
+    text-decoration: underline !important;
+}
+
+.footer-slack {
+  padding: 20px;
+  border-radius: 25px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #F7D2F3;
+  margin: 20px;
+  text-align: center;
+  size: 0.5em;
+}
+
+.link {
+  font-family: 'Quicksand', sans-serif;
+  justify-content: space-around;
+  padding-right: 20px;
+  padding-left: 30px;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.message {
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 150px;
+  float: right;
+  position: relative;
+}

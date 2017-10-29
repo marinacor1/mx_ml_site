@@ -1,0 +1,61 @@
+<div class="full-page">
+<div class="reservation-box">
+  <div class="dropdown">
+  <%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
+    <div class="form-group" style="text-align:center;">
+      <% if @guest.first_name1 && @guest.first_name2 %>
+        RSVP for <%= @guest.first_name1 %> and <%= @guest.first_name2 %>
+      <% else %>
+        RSVP for <%= @guest.first_name1 %>
+      <% end %>
+    </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :attending, "Will you be attending the wedding on Saturday, April 28, 2018 in Mexico City?", class: "col-xs-12 control-label" %>
+      <div class="col-xs-12">
+        <div class = "state-dropdown">
+        <%= f.collection_select :attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :friday_attending, "Will you be attending the Friday night dinner in Mexico City?", class: "col-xs-12 control-label" %>
+      <div class="col-xs-12">
+        <div class = "state-dropdown">
+        <%= f.collection_select :friday_attending, Guest.attending_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, "Email:", class: "col-xs-12 control-label" %>
+      <div class="col-xs-12">
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :housing, "Where will you be staying?", class: "col-xs-12 control-label" %>
+      <div class="col-xs-12">
+        <div class = "state-dropdown">
+        <%= f.collection_select :housing, Guest.housing_options, :dup, :dup, {:prompt => true}%>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :fact, "Interesting Fact About You:", class: "col-xs-12 control-label" %>
+      <div class="col-x2-12">
+        <%= f.text_field :fact, class: "form-control" %>
+      </div>
+    </div>
+<br>
+    <center><div class="edit-user-submission">
+      <%= f.submit "Submit", class: "btn btn-secondary" %>
+    </div></center>
+  <% end %>
+</div>
+</div>
+</div>

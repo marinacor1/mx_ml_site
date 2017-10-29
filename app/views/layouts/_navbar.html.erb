@@ -1,24 +1,32 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right navbar-inverse" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-inverse navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav navbar-inverse">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Our Story</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Registry</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Planning Your Trip To Mexico</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div class = 'container'>
+  <nav class="attempt-at-nav row">
+    <ul class="list-of-links col-xs-12">
+        <% if current_guest %>
+        <li class= "link" style="  text-decoration: none !important; color: #000;">
+          <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
+        </li>
+          <li class="link">
+            <% if current_guest.admin? %>
+              <%= link_to "Guest Information", guest_index_path %>
+            <% end %>
+          </li>
+          <li class = "link">
+            <%= link_to "All About Mexico", viva_mexico_path %>
+          </li>
+          <li class = "link">
+            <%= link_to "Registry", registry_path %>
+          </li>
+          <li class="link">
+            <%= link_to "Logout", logout_path, method: :delete %>
+          </li>
+        </ul>
+        <span class="message">
+          <% if current_guest.admin? %>
+            Hello, Admin
+          <% else %>
+            Hello, <%=current_guest.first_name1  %>
+          <% end %>
+        </span>
+      <% end %>
+  </nav>
+</div>
