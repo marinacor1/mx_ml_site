@@ -2,6 +2,15 @@
   <nav class="attempt-at-nav row">
     <ul class="list-of-links col-xs-12">
         <% if current_guest %>
+        <li>
+          <span class="message">
+            <% if current_guest.admin? %>
+              Hello, Admin
+            <% else %>
+              Hello, <%=current_guest.first_name1  %>
+            <% end %>
+          </span>
+        </li>
         <li class= "link" style="  text-decoration: none !important; color: #000;">
           <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
         </li>
@@ -18,13 +27,7 @@
           </li>
 
         </ul>
-        <span class="message">
-          <% if current_guest.admin? %>
-            Hello, Admin
-          <% else %>
-            Hello, <%=current_guest.first_name1  %>
-          <% end %>
-        </span>
+
         <span class = "logout-link"><%= link_to "Logout", logout_path, method: :delete %></span>
 
       <% end %>

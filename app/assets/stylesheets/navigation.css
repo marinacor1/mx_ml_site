@@ -60,18 +60,22 @@ a:active {
   margin-top: 10px;
   color: #000;
   text-decoration: none;
+  font-style: oblique;
+
 }
 
 .message {
   justify-content: space-around;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 150px;
-  float: right;
-  position: relative;
+  position: sticky;
+  font-style: italic;
+
+  font-family: 'Quicksand', sans-serif;
 }
 
 .logout-link {
-  float: right;
-  padding-left: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
