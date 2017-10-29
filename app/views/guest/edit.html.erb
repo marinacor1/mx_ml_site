@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :email, "Food Preference for #{@guest.first_name1}:", class: "col-xs-12 control-label" %>
+      <%= f.label :food_option1, "Food Preference for #{@guest.first_name1}:", class: "col-xs-12 control-label" %>
         <div class="col-xs-12">
           <div class = "state-dropdown">
           <%= f.collection_select :food_option1, Guest.food_options, :dup, :dup, {:prompt => true}%>
@@ -31,7 +31,7 @@
 
     <% if @guest.first_name2 %>
       <div class="form-group">
-        <%= f.label :email, "Food Preference for #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
+        <%= f.label :food_option2, "Food Preference for #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
           <div class="col-xs-12">
             <div class = "state-dropdown">
             <%= f.collection_select :food_option2, Guest.food_options, :dup, :dup, {:prompt => true}%>
@@ -50,11 +50,20 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :email, "Email:", class: "col-xs-12 control-label" %>
+      <%= f.label :email, "Email for #{@guest.first_name1}:", class: "col-xs-12 control-label" %>
       <div class="col-xs-12">
         <%= f.text_field :email, class: "form-control" %>
       </div>
     </div>
+
+    <% if @guest.first_name2 %>
+      <div class="form-group">
+        <%= f.label :second_email, "Email for #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
+        <div class="col-xs-12">
+          <%= f.text_field :second_email, class: "form-control" %>
+        </div>
+      </div>
+    <% end %>
 
     <div class="form-group">
       <%= f.label :housing, "Where will you be staying?", class: "col-xs-12 control-label" %>
