@@ -1,8 +1,8 @@
-<div class = 'top-border'>
-  <nav class="attempt-at-nav">
-    <ul class="list-of-links">
+<div class = 'container'>
+  <nav class="attempt-at-nav row">
+    <ul class="list-of-links col-xs-12">
         <% if current_guest %>
-        <li class= "link">
+        <li class= "link" style="  text-decoration: none !important; color: #000;">
           <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
         </li>
           <li class="link">
@@ -13,7 +13,9 @@
           <li class = "link">
             <%= link_to "All About Mexico", viva_mexico_path %>
           </li>
-
+          <li class = "link">
+            <%= link_to "Registry", registry_path %>
+          </li>
           <li class="link">
             <%= link_to "Logout", logout_path, method: :delete %>
           </li>

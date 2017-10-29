@@ -1,8 +1,6 @@
-.top-border {
-  display: flex;
-}
+
 .attempt-at-nav{
-  justify-content: space-around;
+  display: flex;
   height: 40px;
 }
 
@@ -44,4 +42,23 @@ a:active {
   margin: 20px;
   text-align: center;
   size: 0.5em;
+}
+
+.link {
+  font-family: 'Quicksand', sans-serif;
+  justify-content: space-around;
+  padding-right: 20px;
+  padding-left: 30px;
+  margin-top: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.message {
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 150px;
+  float: right;
+  position: relative;
 }
