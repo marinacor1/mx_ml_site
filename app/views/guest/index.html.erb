@@ -1,7 +1,6 @@
 <div= "containter">
 <div class="col md- 4 card">
   <div class="users-index-page">
-    <h1>RSVP information:</h1>
     <table class="table">
       <thead class="thead-inverse">
         <tr>
@@ -15,13 +14,13 @@
       </thead>
       <tbody>
         <tr>
-          <% @guests.each_with_index do |user, index| %>
+          <% @guests.each_with_index do |guest, index| %>
             <td><%= index + 1 %></td>
-            <td><%= user.first_name1 %><%= user.last_name1 %></td>
-            <td><%= user.first_name2 %><%= user.last_name2 %></td>
-            <td><%= user.email %></td>
-            <td><%= user.housing %></td>
-            <td><%= user.rsvped %></td>
+            <td><%= guest.first_name1 %><%= guest.last_name1 %></td>
+            <td><%= guest.first_name2 %><%= guest.last_name2 %></td>
+            <td><%= guest.email %></td>
+            <td><%= guest.housing %></td>
+            <td><%= guest.rsvped %></td>
         </tr>
         <% end %>
     </tbody>

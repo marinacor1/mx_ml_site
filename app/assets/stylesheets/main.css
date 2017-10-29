@@ -3701,7 +3701,8 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("banner.jpg");
+		background: url('mexico_city_downtown.jpg') ;
+
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;

@@ -45,10 +45,11 @@ a:active {
   padding: 20px;
   border-radius: 25px;
   font-family: 'Quicksand', sans-serif;
-  background-color: #F7D2F3;
+  background-color: #5a4936;
   margin: 20px;
   text-align: center;
   size: 0.5em;
+  color: #FFF;
 }
 
 .link {
@@ -69,7 +70,6 @@ a:active {
   float: right;
   position: relative;
 }
-
 
 .logout-link {
   float: right;

@@ -15,6 +15,7 @@
   <script src="https://use.fontawesome.com/105bad6774.js"></script>
 </head>
 <body>
+  <%= render "layouts/navbar" %>
 
   <% flash.each do |type, message| %>
     <h5><%= content_tag :div, message.html_safe, class:"flash-#{type}" %></h5>
