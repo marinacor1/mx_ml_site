@@ -18,20 +18,27 @@ li {
 
 }
 
+a {
+  color: #000 !important;
+}
 a:link {
     text-decoration: none !important;
+    color: #00000 !important;
 }
 
 a:visited {
     text-decoration: none !important;
+    color: #00000 !important;
 }
 
 a:hover {
     text-decoration: underline !important;
+    color: #00000 !important;
 }
 
 a:active {
     text-decoration: underline !important;
+    color: #00000 !important;
 }
 
 .footer-slack {
@@ -61,4 +68,10 @@ a:active {
   padding-left: 150px;
   float: right;
   position: relative;
+}
+
+
+.logout-link {
+  float: right;
+  padding-left: 200px;
 }

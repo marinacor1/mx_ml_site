@@ -29,8 +29,8 @@
  margin: 20px;
  color: #000 !important;
  padding: 10px;
+ background: url('pic01.jpg') no-repeat;
 }
-
 
 #session_code {
  border: solid black 1px;

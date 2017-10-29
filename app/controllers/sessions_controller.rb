@@ -7,9 +7,7 @@ class SessionsController < ApplicationController
     if @guest
       session[:guest_id] = @guest.id
       @guest.role = "guest"
-      if current_permission
-        redirect_to welcome_path
-      end
+      redirect_to welcome_path if current_permission
     else
       flash[:error] = 'Check your code and try again.'
       render :new

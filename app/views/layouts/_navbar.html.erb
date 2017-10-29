@@ -16,9 +16,7 @@
           <li class = "link">
             <%= link_to "Registry", registry_path %>
           </li>
-          <li class="link">
-            <%= link_to "Logout", logout_path, method: :delete %>
-          </li>
+
         </ul>
         <span class="message">
           <% if current_guest.admin? %>
@@ -27,6 +25,8 @@
             Hello, <%=current_guest.first_name1  %>
           <% end %>
         </span>
+        <span class = "logout-link"><%= link_to "Logout", logout_path, method: :delete %></span>
+
       <% end %>
   </nav>
 </div>

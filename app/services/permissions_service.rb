@@ -39,6 +39,7 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'schedule'
     return true if controller == 'connected'
+    return true if controller == 'registry'
   end
 
   def family_permissions
