@@ -11,21 +11,29 @@
             <% end %>
           </span>
         </li>
-        <li class= "link" style="  text-decoration: none !important; color: #000;">
-          <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
-        </li>
-          <li class="link">
-            <% if current_guest.admin? %>
-              <%= link_to "Guest Information", guest_index_path %>
-            <% end %>
+          <li class= "link" style="  text-decoration: none !important; color: #000;">
+            <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
           </li>
+        <% if current_guest.admin? %>
+          <li class="link">
+            <%= link_to "Guest Information", guest_index_path %>
+          </li>
+        <% end %>
+        <% if current_guest.family? %>
+          <li class="link">
+            <%= link_to "Family Wedding Schedule", family_schedule_path %>
+          </li>
+          <% else %>
+          <li class="link">
+            <%= link_to "Wedding Schedule", wedding_schedule_path %>
+          </li>
+          <% end %>
           <li class = "link">
             <%= link_to "All About Mexico", viva_mexico_path %>
           </li>
           <li class = "link">
             <%= link_to "Registry", registry_path %>
           </li>
-
         </ul>
 
         <span class = "logout-link"><%= link_to "Logout", logout_path, method: :delete %></span>

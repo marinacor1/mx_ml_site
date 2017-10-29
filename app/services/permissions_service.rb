@@ -17,7 +17,7 @@ class PermissionsService
     case
     when @a_guest.role == 'Admin' then admin_permissions
     when @a_guest.role == 'baf' then bridesmaid_and_family_permissions
-    when @a_guest.role == 'baf' then family_permissions
+    when @a_guest.role == 'family' then family_permissions
     when @a_guest.role == 'bridesmaid' then bridesmaid_permissions
     when @a_guest.role == 'guest' then registered_guest_permissions
     else
@@ -53,6 +53,8 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'schedule'
     return true if controller == 'connected'
+    return true if controller == 'registry'
+
   end
 
   def bridesmaid_permissions
@@ -66,6 +68,8 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'schedule'
     return true if controller == 'connected'
+    return true if controller == 'registry'
+
   end
 
   def bridesmaid_and_family_permissions
@@ -80,6 +84,8 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'family_schedule'
     return true if controller == 'connected'
+    return true if controller == 'registry'
+
   end
 
   def registered_guest_permissions
@@ -92,6 +98,8 @@ class PermissionsService
     return true if controller == 'our_story'
     return true if controller == 'schedule'
     return true if controller == 'connected'
+    return true if controller == 'registry'
+
   end
 
   def unregistered_guest_permissions

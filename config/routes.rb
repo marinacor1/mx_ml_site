@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/welcome', to: 'welcome#show'
   get '/schedule', to: 'schedule#show'
-  get '/family_schedule', to: 'family_schedule#show'
+  get '/family_schedule', to: 'itinerary#family'
   get '/lodging', to: 'lodging#show'
   get '/viva_mexico', to: 'mexico#show'
   get 'bridesmaid_center', to: 'bridesmaid#show'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch 'bridesmaid_update', to: 'bridesmaid#update'
   put 'bridesmaid_update', to: 'bridesmaid#update'
   get '/registry', to: 'registry#show'
+  get '/wedding_schedule', to: 'itinerary#show'
 
   namespace :admin do
     get '/dashboard', to: 'users#show'

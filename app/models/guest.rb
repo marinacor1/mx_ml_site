@@ -16,4 +16,9 @@ class Guest < ActiveRecord::Base
     ['Chicken', 'Beef', 'Fish']
   end
 
+  def family?
+    valid_roles = ['Admin', 'baf', 'family']
+    valid_roles.include?(role)
+  end
+
 end
