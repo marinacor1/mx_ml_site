@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   put 'bridesmaid_update', to: 'bridesmaid#update'
   get '/registry', to: 'registry#show'
   get '/wedding_schedule', to: 'itinerary#show'
+  get '/our_story', to: 'our_story#show'
 
   namespace :admin do
     get '/dashboard', to: 'users#show'

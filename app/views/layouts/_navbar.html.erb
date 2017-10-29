@@ -21,15 +21,18 @@
         <% end %>
         <% if current_guest.family? %>
           <li class="link">
-            <%= link_to "Family Wedding Schedule", family_schedule_path %>
+            <%= link_to "Family Schedule", family_schedule_path %>
           </li>
           <% else %>
           <li class="link">
-            <%= link_to "Wedding Schedule", wedding_schedule_path %>
+            <%= link_to "Schedule", wedding_schedule_path %>
           </li>
           <% end %>
           <li class = "link">
             <%= link_to "All About Mexico", viva_mexico_path %>
+          </li>
+          <li class = "link">
+            <%= link_to "Our Story", our_story_path %>
           </li>
           <li class = "link">
             <%= link_to "Registry", registry_path %>
