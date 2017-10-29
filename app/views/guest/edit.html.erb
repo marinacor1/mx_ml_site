@@ -21,6 +21,26 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :email, "Food Preference for #{@guest.first_name1}:", class: "col-xs-12 control-label" %>
+        <div class="col-xs-12">
+          <div class = "state-dropdown">
+          <%= f.collection_select :food_option1, Guest.food_options, :dup, :dup, {:prompt => true}%>
+        </div>
+      </div>
+    </div>
+
+    <% if @guest.first_name2 %>
+      <div class="form-group">
+        <%= f.label :email, "Food Preference for #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
+          <div class="col-xs-12">
+            <div class = "state-dropdown">
+            <%= f.collection_select :food_option2, Guest.food_options, :dup, :dup, {:prompt => true}%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-group">
       <%= f.label :friday_attending, "Will you be attending the Friday night dinner in Mexico City?", class: "col-xs-12 control-label" %>
       <div class="col-xs-12">
         <div class = "state-dropdown">
@@ -46,7 +66,14 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :fact, "Interesting Fact About You:", class: "col-xs-12 control-label" %>
+      <%= f.label :fact, "Interesting Fact About #{@guest.first_name1}:", class: "col-xs-12 control-label" %>
+      <div class="col-x2-12">
+        <%= f.text_field :fact, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :interesting_fact_two, "Interesting Fact About #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
       <div class="col-x2-12">
         <%= f.text_field :fact, class: "form-control" %>
       </div>
