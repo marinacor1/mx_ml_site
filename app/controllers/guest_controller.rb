@@ -28,7 +28,16 @@ class GuestController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:code, :housing, :attending, :rsvped, :fact, :email, :friday_attending)
+    params.require(:guest).permit(:food_option1,
+                                  :food_option2,
+                                  :housing,
+                                  :attending,
+                                  :rsvped,
+                                  :fact,
+                                  :email,
+                                  :friday_attending,
+                                  :interesting_fact_two,
+                                  :second_email)
   end
 
   def attending_check(status)

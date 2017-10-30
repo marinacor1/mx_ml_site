@@ -1,4 +1,5 @@
 <div class="full-page">
+  <br>
 <div class="reservation-box">
   <div class="dropdown">
   <%= form_for (@guest), :html => {:class => "form-horizontal center"} do |f| %>
@@ -81,17 +82,21 @@
       </div>
     </div>
 
+    <% if @guest.first_name2 %>
     <div class="form-group">
-      <%= f.label :interesting_fact_two, "Interesting Fact About #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
-      <div class="col-x2-12">
-        <%= f.text_field :fact, class: "form-control" %>
+        <%= f.label :interesting_fact_two, "Interesting Fact About #{@guest.first_name2}:", class: "col-xs-12 control-label" %>
+        <div class="col-x2-12">
+          <%= f.text_field :fact, class: "form-control" %>
+        </div>
       </div>
-    </div>
+    <% end %>
 <br>
     <center><div class="edit-user-submission">
       <%= f.submit "Submit", class: "btn btn-secondary" %>
     </div></center>
   <% end %>
 </div>
+<br>
+
 </div>
 </div>

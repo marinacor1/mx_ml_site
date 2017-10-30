@@ -1,4 +1,6 @@
 class Guest < ActiveRecord::Base
+  validates :first_name1, presence: true
+  validates :last_name1, presence: true
 
   def admin?
     role == 'Admin'
