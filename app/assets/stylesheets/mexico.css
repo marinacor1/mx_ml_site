@@ -46,6 +46,16 @@
   margin: auto 0;
 }
 
+table.no-zebra tbody tr:nth-child(odd) td,
+table.no-zebra tbody tr.even td {
+  background: #FFF;
+  border: 0px #FFF solid;
+}
+
+table.no-zebra th {
+  background: #FFF;
+}
+
 table {
   background-color: #FFF !important;
 }
