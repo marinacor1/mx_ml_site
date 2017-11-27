@@ -1,7 +1,7 @@
-
 .attempt-at-nav{
   display: flex;
   height: 40px;
+  font-size: 75% !important;
 }
 
 .admin-greeting {
@@ -31,8 +31,7 @@ a:visited {
 }
 
 a:hover {
-    text-decoration: underline !important;
-    color: #00000 !important;
+    color: #29D0D0 !important;
 }
 
 a:active {
@@ -60,7 +59,6 @@ a:active {
   color: #000;
   text-decoration: none;
   font-style: oblique;
-
 }
 
 .message {
@@ -69,12 +67,27 @@ a:active {
   padding-bottom: 10px;
   position: sticky;
   font-style: italic;
-
   font-family: 'Quicksand', sans-serif;
 }
 
 .logout-link {
   position: fixed;
   top: 0;
-  right: 0;
+  right: .2;
+}
+
+@media screen and (max-width: 600px) {
+  .fa-bar {
+    visibility: visible;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fa-bar {
+    visibility: hidden;
+  }
+  .list-of-links {
+    visibility: hidden;
+  }
 }

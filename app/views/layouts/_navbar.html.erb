@@ -1,6 +1,7 @@
 <div class = 'container'>
-  <nav class="attempt-at-nav row">
-    <ul class="list-of-links col-xs-12">
+  <div class="pos-f-t">
+    <nav class="navbar-brand collapse attempt-at-nav row">
+      <div id="navbarToggleExternalContent">
         <% if current_guest %>
         <li>
           <span class="message">
@@ -11,36 +12,38 @@
             <% end %>
           </span>
         </li>
-          <li class= "link" style="  text-decoration: none !important; color: #000;">
-            <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
-          </li>
-        <% if current_guest.admin? %>
-          <li class="link">
-            <%= link_to "Guest Information", guest_index_path %>
-          </li>
-        <% end %>
-        <% if current_guest.family? %>
-          <li class="link">
-            <%= link_to "Family Schedule", family_schedule_path %>
-          </li>
-          <% else %>
-          <li class="link">
-            <%= link_to "Schedule", wedding_schedule_path %>
-          </li>
+          <ul class="list-of-links col-xs-12">
+                <li class= "link" style="  text-decoration: none !important; color: #000;">
+                  <a href = <%= edit_guest_path(current_guest) %>> RSVP</a>
+                </li>
+              <% if current_guest.admin? %>
+                <li class="link">
+                  <%= link_to "Guest Information", guest_index_path %>
+                </li>
+              <% end %>
+              <% if current_guest.family? %>
+                <li class="link">
+                  <%= link_to "Family Schedule", family_schedule_path %>
+                </li>
+                <% else %>
+                <li class="link">
+                  <%= link_to "Schedule", wedding_schedule_path %>
+                </li>
+                <% end %>
+                <li class = "link">
+                  <%= link_to "All About Mexico", viva_mexico_path %>
+                </li>
+                <li class = "link">
+                  <%= link_to "Our Story", our_story_path %>
+                </li>
+                <li class = "link">
+                  <%= link_to "Registry", registry_path %>
+                </li>
+              </ul>
+            <span class = "logout-link"><%= link_to "Logout", logout_path, method: :delete %></span>
           <% end %>
-          <li class = "link">
-            <%= link_to "All About Mexico", viva_mexico_path %>
-          </li>
-          <li class = "link">
-            <%= link_to "Our Story", our_story_path %>
-          </li>
-          <li class = "link">
-            <%= link_to "Registry", registry_path %>
-          </li>
-        </ul>
-
-        <span class = "logout-link"><%= link_to "Logout", logout_path, method: :delete %></span>
-
-      <% end %>
-  </nav>
+      </div>
+    </nav>
+  </div>
 </div>
+<i class="fa fa-bars fa-lg" aria-hidden="true"</i>

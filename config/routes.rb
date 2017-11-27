@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/family_schedule', to: 'itinerary#family'
   get '/lodging', to: 'lodging#show'
   get '/viva_mexico', to: 'mexico#show'
+  get '/mexico_itineraries', to: 'mexico#index'
   get 'bridesmaid_center', to: 'bridesmaid#show'
   get 'bridesmaid_edit', to: 'bridesmaid#edit'
   patch 'bridesmaid_update', to: 'bridesmaid#update'

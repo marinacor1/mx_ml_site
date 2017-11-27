@@ -1,0 +1,30 @@
+.plans-title {
+  border: solid 2px #000;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  font-family: Lato, arial;
+}
+
+.guide-links {
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px #000;
+}
+
+ul.a {
+  list-style-type: circle;
+}
+
+.safety {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.neighborhoods {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
