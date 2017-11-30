@@ -76,18 +76,24 @@ a:active {
   right: .2;
 }
 
-@media screen and (max-width: 600px) {
+.hashtag {
+  padding: 70px;
+  margin: auto;
+  font-family: Lato, arial, sans-serif;
+}
+
+/*@media screen and (max-width: 600px) {
   .fa-bar {
     visibility: visible;
     padding-left: 10px;
   }
-}
+}*/
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .fa-bar {
     visibility: hidden;
   }
   .list-of-links {
     visibility: hidden;
   }
-}
+}*/
